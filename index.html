@@ -3,35 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Experience</title>
+    <title>ROBO-X | Future Store</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
 
-    <nav>
-        <div class="logo">ULTRA</div>
-        <button class="login-trigger" onclick="toggleAuth()">Login</button>
+    <nav class="top-bar">
+        <div class="logo">ROBO<span>X</span></div>
+        <div class="nav-right">
+            <div class="cart-icon" onclick="openCart()">
+                🛒 Cart (<span id="cart-count">0</span>)
+            </div>
+        </div>
     </nav>
 
-    <section class="hero">
-        <h1 class="reveal">DESIGN</h1>
-        <h1 class="reveal">BEYOND</h1>
-        <p class="reveal">A professional interface hosted entirely on GitHub.</p>
-    </section>
+    <header class="hero">
+        <h1>Advanced Robotics</h1>
+        <p>Premium hardware for the next generation.</p>
+    </header>
 
-    <div id="auth-modal" class="modal">
+    <main class="product-grid" id="product-grid">
+        </main>
+
+    <div id="payment-modal" class="modal">
         <div class="glass-card">
-            <h2>Access Portal</h2>
-            <div class="input-group">
-                <input type="email" placeholder="Email Address" id="email">
-                <input type="password" placeholder="Password" id="password">
+            <h2 id="modal-title">Complete Purchase</h2>
+            <div id="modal-content">
+                <input type="email" id="user-email" placeholder="Email ID" class="glass-input">
+                <input type="tel" id="user-phone" placeholder="Phone Number" class="glass-input">
+                <button class="buy-btn" onclick="processPayment()">Confirm Order</button>
             </div>
-            <button class="submit-btn" onclick="handleAuth()">Enter System</button>
-            <p onclick="toggleAuth()" class="close-btn">Cancel</p>
+            <p onclick="closeModal()" class="close-btn">Close</p>
         </div>
     </div>
 
