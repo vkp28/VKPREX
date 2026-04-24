@@ -1,5 +1,6 @@
 let isSignUp = true;
-
+// Add scroll-based background animation
+document.body.classList.add('scroll-gradient');
 const panels = {
     game: { url: "gp.vkprex.cloud", sidebar: ["Real-Time Console", "Mods Installer", "Plugin Installer", "Config Editor"], content: `<img src="game-panel.png" class="w-full h-full object-cover">` },
     web: { url: "smartweb.vkprex.cloud", sidebar: ["File Manager", "Database Manager", "SSL & Security", "1-Click Installer"], content: `<img src="web-panel.png" class="w-full h-full object-cover">` },
