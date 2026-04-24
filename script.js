@@ -34,28 +34,32 @@ function switchTab(type) {
                 <div class="flex-1 bg-black/40 text-gray-500 text-[10px] py-1.5 rounded-md text-center font-mono border border-white/5">${data.url}</div>
                 <div class="w-12"></div>
             </div>
+
             <div class="relative w-full">
-                <img src="${data.img}" class="w-full object-cover object-top">
+                <img src="${data.img}" class="w-full object-cover object-top" onerror="this.src='https://via.placeholder.com/1200x600/111/333?text=Panel+Image+Missing'">
                 <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#0d0d0d] p-8">
-                    <h3 class="text-2xl font-black uppercase text-white">${data.sidebar[0]}</h3>
+                    <h3 class="text-2xl font-black uppercase text-white tracking-tighter">${data.sidebar[0]}</h3>
                 </div>
             </div>
-            <div id="mapReveal" class="map-container opacity-0 translate-y-10">
+
+            <div id="mapReveal" class="map-container opacity-0 translate-y-10 transition-all duration-700">
                 <div class="text-center mb-10">
                     <h2 class="text-3xl font-black uppercase text-white">GLOBAL PRESENCE, <span class="text-indigo-500">LOCAL PERFORMANCE</span></h2>
+                    <p class="text-gray-500 text-sm mt-2">Ultra-low latency network nodes across the globe.</p>
                 </div>
-                <div class="relative w-full max-w-4xl mx-auto">
-                    <img src="image_87e27a.png" class="world-map">
-                    <div class="dot dot-na"></div><div class="dot dot-eu"></div><div class="dot dot-as"></div><div class="dot dot-sea"></div><div class="dot dot-au"></div>
-                </div>
+                <div class="relative w-full max-w-5xl mx-auto px-4">
+                    <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?q=80&w=2000&auto=format&fit=crop" 
+                         class="world-map rounded-3xl border border-white/5" alt="Network Map">
+                    
+                    <div class="dot" style="top: 35%; left: 20%;"></div> <div class="dot" style="top: 30%; left: 48%;"></div> <div class="dot" style="top: 45%; left: 75%;"></div> <div class="dot" style="top: 70%; left: 85%;"></div> <div class="dot" style="top: 65%; left: 25%;"></div> </div>
             </div>
-        </div>
+            <div class="h-20"></div> </div>
     `;
 
     const scrollBox = document.getElementById('scrollBox');
     const mapReveal = document.getElementById('mapReveal');
     scrollBox.addEventListener('scroll', () => {
-        if (scrollBox.scrollTop > 150) {
+        if (scrollBox.scrollTop > 100) {
             mapReveal.classList.remove('opacity-0', 'translate-y-10');
             mapReveal.classList.add('opacity-100', 'translate-y-0');
         }
