@@ -36,14 +36,11 @@ document.getElementById('authForm').addEventListener('submit', (e) => {
     const errorEl = document.getElementById('authError');
 
     if (isSignUp) {
-        // Save to browser memory
         localStorage.setItem(`vkp_rex_user_${email}`, pass);
         alert("VKP.REX Account Created! You can now Login.");
         toggleAuthMode();
     } else {
-        // Check browser memory
         const savedPass = localStorage.getItem(`vkp_rex_user_${email}`);
-
         if (savedPass === null) {
             errorEl.innerText = "Rex ID not found. Please Sign Up.";
             errorEl.classList.remove('hidden');
