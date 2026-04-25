@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VKP.REX | Elite Infrastructure</title>
+    <title>VKP.REX | Infrastructure</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -11,107 +11,113 @@
 <body class="bg-[#06030e] text-white font-sans overflow-x-hidden">
 
     <div id="landingPage">
-        <nav class="flex justify-between items-center px-10 py-4 sticky top-0 z-50 glass-nav border-b border-white/5">
+        <nav class="flex justify-between items-center px-8 py-4 sticky top-0 z-50 glass-nav border-b border-white/5">
             <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-purple-600 to-indigo-600 flex items-center justify-center shadow-[0_0_20px_rgba(124,58,237,0.4)]">
-                    <span class="font-black italic text-white">V</span>
+                <div class="logo-wrapper w-10 h-10 rounded-full flex items-center justify-center">
+                    <i class="fas fa-bolt text-white text-lg"></i>
                 </div>
-                <div class="text-2xl font-black uppercase tracking-tighter italic">VKP<span class="text-purple-400">.REX</span></div>
+                <div class="text-xl font-black uppercase tracking-tight italic">
+                    VKP<span class="text-purple-500">.REX</span>
+                </div>
             </div>
 
-            <div class="hidden lg:flex gap-8 items-center text-[11px] font-bold uppercase tracking-widest text-gray-300">
-                <a href="#" class="flex items-center gap-2 hover:text-purple-400 transition">
-                    <i class="fas fa-gamepad text-xs"></i> Game Hosting
-                </a>
-                <div class="group relative cursor-pointer hover:text-purple-400 flex items-center gap-1">
-                    <i class="fas fa-globe text-xs"></i> Hosting Services <i class="fas fa-chevron-down text-[8px]"></i>
-                </div>
-                <div class="group relative cursor-pointer hover:text-purple-400 flex items-center gap-1">
-                    <i class="fas fa-sparkles text-xs"></i> Important <i class="fas fa-chevron-down text-[8px]"></i>
-                </div>
-                <div class="group relative cursor-pointer hover:text-purple-400 flex items-center gap-1">
-                    <i class="fas fa-file-alt text-xs"></i> Legal <i class="fas fa-chevron-down text-[8px]"></i>
-                </div>
+            <div class="hidden lg:flex items-center gap-10">
+                <button class="nav-item flex items-center gap-2">
+                    <i class="fas fa-gamepad"></i> Game Hosting
+                </button>
+                <button class="nav-item flex items-center gap-2">
+                    <i class="fas fa-globe"></i> Hosting Services <i class="fas fa-chevron-down text-[10px] opacity-50"></i>
+                </button>
+                <button class="nav-item flex items-center gap-2">
+                    <i class="fas fa-sparkles"></i> Important <i class="fas fa-chevron-down text-[10px] opacity-50"></i>
+                </button>
+                <button class="nav-item flex items-center gap-2">
+                    <i class="fas fa-file-alt"></i> Legal <i class="fas fa-chevron-down text-[10px] opacity-50"></i>
+                </button>
             </div>
 
             <div class="flex items-center gap-6">
-                <div class="text-[11px] font-bold text-gray-400 flex items-center gap-1 cursor-pointer">
-                    <span class="text-purple-500">$</span> USD <i class="fas fa-chevron-down text-[8px]"></i>
-                </div>
-                <button onclick="openAuth()" class="btn-login-purple">Login</button>
+                <button class="currency-btn flex items-center gap-2">
+                    <span class="text-purple-500 font-bold">$</span> USD <i class="fas fa-chevron-down text-[10px] opacity-50"></i>
+                </button>
+                <button onclick="openAuth()" class="login-btn">
+                    Login
+                </button>
             </div>
         </nav>
 
         <section class="relative py-40 text-center">
             <div class="hero-glow"></div>
-            <h1 class="text-[10rem] md:text-[14rem] font-black mb-4 tracking-tighter uppercase italic leading-none">.REX</h1>
-            <p class="text-purple-300/40 text-sm uppercase tracking-[1.5em] mb-16">High Performance Infrastructure</p>
-            <button onclick="openAuth()" class="btn-glow-white">Get Started</button>
+            <h1 class="text-[12rem] font-black tracking-tighter uppercase italic leading-none opacity-80">.REX</h1>
+            <p class="text-purple-400/40 text-sm uppercase tracking-[1.5em] mb-12">Next Generation Nodes</p>
+            <button onclick="openAuth()" class="main-cta">Explore Solutions</button>
         </section>
 
-        <section class="max-w-7xl mx-auto px-6 py-24">
-            <div class="text-center mb-20">
-                <div class="inline-block px-4 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-[10px] font-black uppercase tracking-widest text-purple-400 mb-4">Beyond Gaming</div>
-                <h2 class="text-6xl font-black uppercase italic tracking-tighter">Your Complete Hosting <span class="text-purple-600">Solution.</span></h2>
-                <p class="text-gray-500 mt-4 uppercase text-xs font-bold tracking-widest">Professional hosting for all your needs</p>
+        <section class="max-w-7xl mx-auto px-6 py-20">
+            <div class="text-center mb-16">
+                <span class="badge">Beyond Gaming</span>
+                <h2 class="text-5xl font-black uppercase italic mt-4">Your Complete Hosting Solution</h2>
+                <p class="text-gray-500 mt-2 uppercase text-xs font-bold tracking-widest">Beyond gaming servers, we offer professional hosting for all your needs.</p>
             </div>
-            
+
             <div class="grid md:grid-cols-4 gap-6">
                 <div class="hosting-card">
-                    <i class="fas fa-desktop text-3xl text-purple-600 mb-8"></i>
-                    <h3 class="text-xl font-black uppercase italic">RDP Hosting</h3>
-                    <p class="text-gray-500 text-[10px] mt-4 leading-relaxed uppercase font-bold">Windows Remote Desktop with full admin access.</p>
+                    <div class="icon-box rdp"><i class="fas fa-desktop"></i></div>
+                    <h3>RDP Hosting</h3>
+                    <p>Windows Remote Desktop with full admin access, deployed in minutes.</p>
                 </div>
                 <div class="hosting-card">
-                    <i class="fas fa-server text-3xl text-purple-600 mb-8"></i>
-                    <h3 class="text-xl font-black uppercase italic">Colocation</h3>
-                    <p class="text-gray-500 text-[10px] mt-4 leading-relaxed uppercase font-bold">Secure, high-uptime hardware housing.</p>
+                    <div class="icon-box colo"><i class="fas fa-server"></i></div>
+                    <h3>Colocation</h3>
+                    <p>House your hardware in our secure, high-uptime data centers.</p>
                 </div>
                 <div class="hosting-card">
-                    <i class="fas fa-microchip text-3xl text-purple-600 mb-8"></i>
-                    <h3 class="text-xl font-black uppercase italic">VPS Hosting</h3>
-                    <p class="text-gray-500 text-[10px] mt-4 leading-relaxed uppercase font-bold">Full root access with dedicated resources.</p>
+                    <div class="icon-box vps"><i class="fas fa-microchip"></i></div>
+                    <h3>VPS Hosting</h3>
+                    <p>Full root access with dedicated resources for developers.</p>
                 </div>
                 <div class="hosting-card">
-                    <i class="fas fa-globe text-3xl text-purple-600 mb-8"></i>
-                    <h3 class="text-xl font-black uppercase italic">Web Hosting</h3>
-                    <p class="text-gray-500 text-[10px] mt-4 leading-relaxed uppercase font-bold">Lightning-fast hosting with cPanel.</p>
+                    <div class="icon-box web"><i class="fas fa-globe"></i></div>
+                    <h3>Web Hosting</h3>
+                    <p>Lightning-fast hosting with cPanel included for ease of use.</p>
                 </div>
+            </div>
+            
+            <div class="flex justify-center gap-2 mt-12">
+                <div class="w-2 h-2 rounded-full bg-white/10"></div>
+                <div class="w-2 h-2 rounded-full bg-white/10"></div>
+                <div class="w-6 h-2 rounded-full bg-purple-600"></div>
+                <div class="w-2 h-2 rounded-full bg-white/10"></div>
             </div>
         </section>
 
-        <div class="max-w-[90%] mx-auto py-10">
-            <div class="elite-divider"></div>
+        <div class="max-w-[90%] mx-auto my-10">
+            <div class="elite-line"></div>
         </div>
 
         <section class="max-w-7xl mx-auto px-6 py-40">
             <div class="grid lg:grid-cols-12 gap-16 items-center">
-                <div class="lg:col-span-7 space-y-10">
-                    <h2 class="text-8xl font-black uppercase italic tracking-tighter leading-none">
-                        OUR <span class="text-transparent border-text">VISION.</span>
-                    </h2>
-                    <p class="text-gray-400 text-2xl leading-relaxed font-medium">
-                        Founded by <span class="text-white font-bold">VKP.REX</span>, we democratize enterprise-grade hosting. Every decision is guided by our belief that technology should empower, not complicate.
+                <div class="lg:col-span-7">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-1 h-8 bg-purple-600"></div>
+                        <h2 class="text-6xl font-black uppercase italic tracking-tighter">Our Vision</h2>
+                    </div>
+                    <p class="text-gray-400 text-2xl leading-relaxed font-medium mb-8">
+                        Founded by <span class="text-white">VKP.REX</span>, we democratize enterprise-grade hosting. Every decision we make is guided by our belief that technology should empower, not complicate.
                     </p>
-                    <div class="flex items-center gap-4 p-6 bg-purple-500/5 border border-purple-500/10 rounded-3xl max-w-xl">
-                        <div class="w-12 h-12 rounded-2xl bg-purple-600/20 flex items-center justify-center text-purple-500">
-                            <i class="fas fa-bolt"></i>
-                        </div>
-                        <p class="text-xs font-bold text-gray-300 uppercase tracking-widest leading-relaxed">
-                            Scaling seamlessly while maintaining the same level of excellence.
-                        </p>
+                    <div class="flex gap-4 items-start p-6 bg-white/[0.02] border border-white/5 rounded-2xl max-w-lg">
+                        <i class="fas fa-bolt text-purple-500 mt-1"></i>
+                        <p class="text-xs font-bold text-gray-500 uppercase tracking-widest">Our infrastructure scales seamlessly while maintaining the same level of excellence.</p>
                     </div>
                 </div>
                 <div class="lg:col-span-5">
-                    <div class="vision-card-quote p-12 rounded-[3.5rem] border border-white/5 relative bg-white/[0.01]">
-                        <i class="fas fa-quote-left text-4xl text-purple-600/20 mb-8"></i>
-                        <p class="text-xl text-gray-200 italic leading-relaxed mb-12">
-                            "Our mission is to break down barriers in cloud computing. Reliability is standard."
-                        </p>
-                        <div class="flex items-center gap-5 pt-8 border-t border-white/5">
-                            <div class="w-14 h-14 rounded-full bg-purple-600 flex items-center justify-center font-black italic shadow-lg">V</div>
+                    <div class="quote-card">
+                        <i class="fas fa-quote-left text-purple-600/30 text-4xl mb-6"></i>
+                        <p class="text-xl italic text-gray-200 mb-10">"Our mission is to break down barriers in cloud computing. We deliver elite infrastructure with simplicity at its core."</p>
+                        <div class="flex items-center gap-4 pt-8 border-t border-white/5">
+                            <div class="w-14 h-14 rounded-full bg-purple-600 flex items-center justify-center font-black shadow-lg">V</div>
                             <div>
-                                <h4 class="text-white font-black uppercase italic">VKP.REX</h4>
+                                <h4 class="text-white font-bold uppercase">VKP.REX</h4>
                                 <p class="text-purple-500 text-[10px] font-black uppercase tracking-widest">Founder & CEO</p>
                             </div>
                         </div>
@@ -119,39 +125,6 @@
                 </div>
             </div>
         </section>
-    </div>
-
-    <div id="dashboard" class="fixed inset-0 bg-[#06030e] hidden z-[100] p-6 flex flex-col">
-        <div class="flex-1 bg-[#0a0518] rounded-[3rem] border border-white/10 flex flex-col overflow-hidden shadow-2xl">
-            <div class="h-14 bg-[#140d2b] border-b border-white/5 flex items-center px-8 gap-8">
-                <div class="flex gap-2.5">
-                    <div class="w-3.5 h-3.5 rounded-full bg-[#ff5f56]"></div>
-                    <div class="w-3.5 h-3.5 rounded-full bg-[#ffbd2e]"></div>
-                    <div class="w-3.5 h-3.5 rounded-full bg-[#27c93f]"></div>
-                </div>
-                <div class="flex-1 bg-black/40 h-9 rounded-xl border border-white/5 flex items-center justify-center text-[10px] font-mono text-purple-400/30 uppercase tracking-[0.3em]">
-                    internal.vkp-rex.cloud
-                </div>
-                <button onclick="location.reload()" class="text-[10px] font-black text-purple-500 uppercase">Disconnect</button>
-            </div>
-            <div class="flex flex-1 overflow-hidden">
-                <aside id="sidebar" class="w-80 border-r border-white/5 p-10"></aside>
-                <main id="panelView" class="flex-1 flex flex-col items-center justify-center"></main>
-            </div>
-        </div>
-    </div>
-
-    <div id="authModal" class="fixed inset-0 bg-black/98 hidden z-[300] flex justify-center items-center backdrop-blur-3xl">
-        <div class="bg-[#0d0721] border border-white/5 p-16 rounded-[4rem] w-full max-w-lg shadow-2xl">
-            <h2 id="authTitle" class="text-5xl font-black mb-12 uppercase italic text-center">Login</h2>
-            <form id="authForm" class="space-y-6">
-                <input type="text" id="authName" placeholder="IDENTIFIER" class="auth-input hidden">
-                <input type="email" id="authEmail" placeholder="EMAIL ADDRESS" class="auth-input" required>
-                <input type="password" id="authPass" placeholder="ACCESS KEY" class="auth-input" required>
-                <button type="submit" class="btn-login-purple w-full py-6 mt-6 rounded-2xl text-base">Authorize</button>
-            </form>
-            <p onclick="toggleAuthMode()" id="toggleText" class="text-center text-gray-500 text-[10px] mt-10 uppercase font-black cursor-pointer hover:text-white">Create Account</p>
-        </div>
     </div>
 
     <script src="script.js"></script>
