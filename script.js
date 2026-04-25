@@ -1,20 +1,8 @@
 let currentCurrency = 'INR';
-const exchangeRate = 83; 
+const exchangeRate = 83; // 1 USD = 83 INR
 
-// Toggle the currency menu visibility
 function toggleCurrencyMenu() {
-    const menu = document.getElementById('currencyMenu');
-    menu.classList.toggle('hidden');
-}
-
-// Close menu if user clicks outside
-window.onclick = function(event) {
-    if (!event.target.matches('.currency-trigger') && !event.target.matches('.currency-trigger *')) {
-        const menu = document.getElementById('currencyMenu');
-        if (menu && !menu.classList.contains('hidden')) {
-            menu.classList.add('hidden');
-        }
-    }
+    document.getElementById('currencyMenu').classList.toggle('hidden');
 }
 
 function setCurrency(type) {
@@ -34,6 +22,7 @@ function setCurrency(type) {
     });
 }
 
+function scrollToSolutions() { document.getElementById('solutions-grid').scrollIntoView({ behavior: 'smooth' }); }
 function openAuth() { document.getElementById('authModal').classList.remove('hidden'); }
 
 document.getElementById('authForm').addEventListener('submit', function(e) {
@@ -42,6 +31,7 @@ document.getElementById('authForm').addEventListener('submit', function(e) {
     document.getElementById('landingPage').classList.add('hidden');
     document.getElementById('authModal').classList.add('hidden');
     document.getElementById('dashboard').classList.remove('hidden');
+    window.scrollTo(0, 0);
 });
 
 function openCheckout(name, priceINR) {
@@ -57,4 +47,4 @@ function openCheckout(name, priceINR) {
 }
 
 function closeCheckout() { document.getElementById('checkoutModal').classList.add('hidden'); }
-function scrollToSolutions() { document.getElementById('solutions-grid').scrollIntoView({ behavior: 'smooth' }); }
+function proceedToPay() { window.location.reload(); }
