@@ -1,39 +1,35 @@
-body { background: radial-gradient(circle at top, #1a0f3c 0%, #0a0518 100%); }
-.text-purple-glow { color: #a78bfa; text-shadow: 0 0 15px rgba(167, 139, 250, 0.4); }
-.glass-nav { background: rgba(6, 3, 14, 0.7); backdrop-filter: blur(15px); }
+body { background: radial-gradient(circle at top right, #130b2b 0%, #06030e 100%); min-height: 100vh; }
+.glass-nav { background: rgba(6, 3, 14, 0.8); backdrop-filter: blur(20px); }
 
-/* Mac Panel Tabs */
-.mac-tab {
-    padding: 6px 20px; border-radius: 8px; font-size: 10px; font-weight: 900; 
-    text-transform: uppercase; color: #555; transition: 0.3s;
+/* ELITE LINE */
+.elite-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(124, 58, 237, 0.6), transparent);
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.3);
 }
-.mac-tab.active { background: #7c3aed; color: white; box-shadow: 0 0 15px rgba(124, 58, 237, 0.4); }
 
-/* Sidebar Items */
-.sidebar-item {
-    padding: 14px 20px; background: rgba(255,255,255,0.02); border-radius: 12px;
-    border: 1px solid rgba(255,255,255,0.03); cursor: pointer; transition: 0.2s;
+/* HOSTING SOLUTION CARDS */
+.hosting-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 50px 40px;
+    border-radius: 2.5rem;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.sidebar-item:hover { background: rgba(124, 58, 237, 0.1); border-color: #7c3aed; color: #a78bfa; }
 
-/* Buttons & Map Pulse */
-.btn-login-ateex { background: #7c3aed; color: white; padding: 10px 35px; border-radius: 12px; font-weight: 900; }
-.btn-glow-white { background: white; color: black; padding: 18px 55px; border-radius: 15px; font-weight: 900; }
-.auth-input { width: 100%; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); padding: 18px; border-radius: 15px; color: white; outline: none; }
-.quote-card { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(20px); }
-
-.map-dot {
-    position: absolute; width: 10px; height: 10px; background: #a78bfa; border-radius: 50%;
-    box-shadow: 0 0 15px #a78bfa;
+.hosting-card:hover {
+    background: rgba(124, 58, 237, 0.04);
+    border-color: rgba(124, 58, 237, 0.4);
+    transform: translateY(-10px);
 }
-.map-dot::after {
-    content: ''; position: absolute; top: 50%; left: 50%; width: 10px; height: 10px;
-    border: 1px solid #a78bfa; border-radius: 50%; transform: translate(-50%, -50%);
-    animation: pulse 2s infinite ease-out;
-}
-@keyframes pulse { 0% { width: 10px; height: 10px; opacity: 1; } 100% { width: 40px; height: 40px; opacity: 0; } }
 
-.hero-blur {
+/* UI ELEMENTS */
+.btn-login-ateex { background: #7c3aed; color: white; padding: 12px 35px; border-radius: 12px; font-weight: 900; font-size: 11px; text-transform: uppercase; }
+.btn-glow-white { background: white; color: black; padding: 20px 60px; border-radius: 20px; font-weight: 900; transition: 0.3s; }
+.auth-input { width: 100%; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); padding: 20px; border-radius: 18px; color: white; outline: none; font-weight: 900; }
+.vision-card { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(20px); }
+
+.hero-glow {
     position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
     width: 800px; height: 400px; background: radial-gradient(circle, rgba(124, 58, 237, 0.1) 0%, transparent 70%);
     filter: blur(100px); pointer-events: none;
