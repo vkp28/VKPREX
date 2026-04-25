@@ -1,6 +1,6 @@
 let currentCurrency = 'INR';
+let globalTotal = "";
 
-// CURRENCY LOGIC
 const btn = document.getElementById('currencyBtn');
 const menu = document.getElementById('currencyMenu');
 
@@ -24,9 +24,6 @@ function changeCurrency(label, rate, symbol) {
     });
 }
 
-// CHECKOUT & PAYMENT FLOW
-let globalTotal = "";
-
 function openCheckout(name, priceINR) {
     let sym = currentCurrency === 'USD' ? "$" : "₹";
     let base = currentCurrency === 'USD' ? (priceINR * 0.012) : priceINR;
@@ -47,8 +44,6 @@ function proceedToPay() {
 }
 
 function closeCheckout() { document.getElementById('checkoutModal').classList.add('hidden'); }
-
-// NAV
 function openAuth() { document.getElementById('authModal').classList.remove('hidden'); }
 function scrollToSolutions() { document.getElementById('solutions-grid').scrollIntoView({ behavior: 'smooth' }); }
 
