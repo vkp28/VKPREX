@@ -1,12 +1,36 @@
-/* CURVED SQUARE ACTION */
+body { background: #06030e; scroll-behavior: smooth; }
+.glass-nav { background: rgba(6, 3, 14, 0.9); backdrop-filter: blur(25px); }
+
+/* SOLUTION CARDS (THE BOXES) */
+.solution-card {
+    background: rgba(255, 255, 255, 0.015);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 45px 35px;
+    border-radius: 2.5rem;
+    transition: 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.solution-card:hover {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(124, 58, 237, 0.4);
+    transform: translateY(-8px);
+}
+
+/* CURVED SQUARE BUTTONS */
 .curved-square-action {
-    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 18px;
-    padding: 18px;
-    text-align: center;
+    border-radius: 18px; /* SQUARE-CURVE */
+    height: 55px;
+    width: 100%;
     font-weight: 900;
-    font-size: 10px;
+    font-size: 11px;
     text-transform: uppercase;
     cursor: pointer;
     transition: 0.3s;
@@ -14,35 +38,22 @@
 
 .curved-square-action:hover {
     background: #7c3aed;
-    box-shadow: 0 0 20px rgba(124, 58, 237, 0.4);
+    border-color: #7c3aed;
+    box-shadow: 0 10px 25px rgba(124, 58, 237, 0.3);
 }
 
-/* LOGO VISIBILITY */
+/* UI ELEMENTS */
 .icon-circle {
-    width: 60px; height: 60px; border-radius: 18px;
+    width: 60px; height: 60px; border-radius: 16px;
     display: flex; align-items: center; justify-content: center;
-    background: currentColor; margin-bottom: 20px;
+    background: currentColor; margin-bottom: 25px;
 }
+.icon-circle i { color: white !important; font-size: 24px; }
 
-.icon-circle i {
-    color: #ffffff !important;
-    font-size: 24px;
-}
-
-/* CURRENCY TRIGGER */
-.currency-trigger {
-    background: rgba(124, 58, 237, 0.1);
-    border: 1px solid rgba(124, 58, 237, 0.5);
-    padding: 8px 16px;
-    border-radius: 10px;
-}
-
-/* OTHER UI */
 .logo-box { width: 45px; height: 45px; background: linear-gradient(135deg, #7c3aed, #4f46e5); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
 .logo-box-small { width: 42px; height: 42px; background: #7c3aed; border-radius: 12px; display: flex; align-items: center; justify-content: center; }
-.login-action-btn { background: #7c3aed; padding: 12px 35px; border-radius: 14px; font-weight: 900; text-transform: uppercase; font-size: 11px; color: white;}
-.explore-btn { background: white; color: black; padding: 18px 40px; border-radius: 14px; font-weight: 900; text-transform: uppercase; }
-.auth-field { width: 100%; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); padding: 20px; border-radius: 15px; color: white; outline: none; }
-.plan-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 2rem; }
-.popular-tag { background: rgba(245,158,11,0.1); color: #f59e0b; padding: 4px 10px; border-radius: 6px; font-size: 8px; font-weight: 900; }
+.login-action-btn { background: #7c3aed; padding: 12px 35px; border-radius: 14px; font-weight: 900; text-transform: uppercase; font-size: 11px; color: white; }
+.explore-btn { background: white; color: black; padding: 20px 50px; border-radius: 18px; font-weight: 900; text-transform: uppercase; }
+.auth-field { width: 100%; background: rgba(255,255,255,0.02) !important; border: 1px solid rgba(255,255,255,0.1) !important; padding: 22px; border-radius: 18px; color: white; font-size: 11px; font-weight: 900; text-transform: uppercase; }
+.hosting-badge { background: rgba(124,58,237,0.1); padding: 8px 20px; border-radius: 99px; font-size: 11px; font-weight: 900; color: #a78bfa; border: 1px solid rgba(124,58,237,0.2); display: inline-block; }
 .hidden { display: none !important; }
