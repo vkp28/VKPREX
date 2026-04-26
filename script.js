@@ -1,16 +1,19 @@
 let currentCurrency = 'INR';
 let globalTotal = "";
 
+// Currency Logic
 const btn = document.getElementById('currencyBtn');
 const menu = document.getElementById('currencyMenu');
 
-btn.onclick = function(e) {
-    e.stopPropagation();
-    menu.classList.toggle('hidden');
-};
+if (btn) {
+    btn.onclick = function(e) {
+        e.stopPropagation();
+        menu.classList.toggle('hidden');
+    };
+}
 
 document.onclick = function() {
-    menu.classList.add('hidden');
+    if(menu) menu.classList.add('hidden');
 };
 
 function changeCurrency(label, rate, symbol) {
@@ -24,6 +27,21 @@ function changeCurrency(label, rate, symbol) {
     });
 }
 
+// Custom Cursor Logic
+const dot = document.querySelector('.cursor-dot');
+const outline = document.querySelector('.cursor-outline');
+
+window.addEventListener('mousemove', (e) => {
+    dot.style.left = e.clientX + 'px';
+    dot.style.top = e.clientY + 'px';
+    
+    outline.animate({
+        left: `${e.clientX}px`,
+        top: `${e.clientY}px`
+    }, { duration: 500, fill: "forwards" });
+});
+
+// Checkout Logic
 function openCheckout(name, priceINR) {
     let sym = currentCurrency === 'USD' ? "$" : "₹";
     let base = currentCurrency === 'USD' ? (priceINR * 0.012) : priceINR;
@@ -38,6 +56,14 @@ function openCheckout(name, priceINR) {
 }
 
 function proceedToPay() {
+    const nameInput = document.getElementById('custName').value;
+    const phoneInput = document.getElementById('custPhone').value;
+
+    if(!nameInput || !phoneInput) {
+        alert("Please fill in your Name and Contact Number.");
+        return;
+    }
+
     document.getElementById('checkoutModal').classList.add('hidden');
     document.getElementById('finalPayAmount').innerText = globalTotal;
     document.getElementById('paymentModal').classList.remove('hidden');
