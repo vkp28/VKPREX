@@ -8,15 +8,16 @@ body { background: #06030e; scroll-behavior: smooth; cursor: none; }
     width: 6px; height: 6px; background: #7c3aed;
     position: fixed; pointer-events: none; z-index: 9999;
     border-radius: 50%; transform: translate(-50%, -50%);
+    display: none; /* Shows on move */
 }
 
 .cursor-outline {
     width: 30px; height: 30px; border: 2px solid rgba(124, 58, 237, 0.4);
     position: fixed; pointer-events: none; z-index: 9998;
     border-radius: 50%; transform: translate(-50%, -50%);
+    display: none; /* Shows on move */
 }
 
-/* CARDS */
 .solution-card {
     background: rgba(255, 255, 255, 0.015);
     border: 1px solid rgba(255, 255, 255, 0.05);
