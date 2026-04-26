@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
-<body class="bg-[#06030e] text-white font-sans overflow-x-hidden">
+<body class="text-white font-sans overflow-x-hidden">
 
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
@@ -81,17 +81,17 @@
         </section>
     </div>
 
-    <div id="dashboard" class="fixed inset-0 bg-[#06030e] hidden z-[100] flex flex-col">
+    <div id="dashboard" class="fixed inset-0 bg-[#06030e] hidden z-[100] flex flex-col dashboard-bg">
         <nav class="flex justify-between items-center px-10 py-4 bg-[#0a0518] border-b border-white/5">
             <div class="flex items-center gap-4">
                 <div class="logo-box-small"><i class="fas fa-rocket text-white"></i></div>
                 <span class="font-black uppercase italic text-lg">VKP<span class="text-purple-500">.REX</span></span>
             </div>
 
-            <div class="hidden md:flex flex-1 max-w-md mx-10">
+            <div class="flex-1 max-w-md mx-10">
                 <div class="relative w-full">
                     <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 text-xs"></i>
-                    <input type="text" placeholder="SEARCH INFRASTRUCTURE..." class="w-full bg-white/5 border border-white/10 rounded-xl py-2 pl-10 pr-4 text-[10px] font-bold text-white focus:outline-none focus:border-purple-500/50 transition">
+                    <input type="text" id="planSearch" onkeyup="filterPlans()" placeholder="SEARCH INFRASTRUCTURE..." class="w-full bg-white/5 border border-white/10 rounded-xl py-2 pl-10 pr-4 text-[10px] font-bold text-white focus:outline-none focus:border-purple-500/50 transition">
                 </div>
             </div>
 
@@ -112,13 +112,37 @@
         </nav>
 
         <div class="flex-1 p-12 overflow-y-auto">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-7xl mx-auto">
+            <div id="plansContainer" class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-7xl mx-auto">
                 <div class="plan-card-dash bg-white/5 p-8 rounded-[2.5rem] border border-white/5">
                     <span class="popular-tag">#1 POPULAR</span>
-                    <h3 class="text-xl font-black uppercase italic mt-4">Micro VPS</h3>
+                    <h3 class="plan-title text-xl font-black uppercase italic mt-4">Micro VPS</h3>
                     <div class="flex justify-between items-center mt-8 pt-6 border-t border-white/5">
                         <span class="text-2xl font-black price-display" data-base="299">₹299/mo</span>
                         <div onclick="openCheckout('Micro VPS', 299)" class="order-btn-box bg-blue-600 px-6 py-2 rounded-lg text-[10px] font-black cursor-pointer">ORDER</div>
+                    </div>
+                </div>
+                <div class="plan-card-dash bg-white/5 p-8 rounded-[2.5rem] border border-white/5">
+                    <span class="popular-tag">PERFORMANCE</span>
+                    <h3 class="plan-title text-xl font-black uppercase italic mt-4">Ryzen VPS</h3>
+                    <div class="flex justify-between items-center mt-8 pt-6 border-t border-white/5">
+                        <span class="text-2xl font-black price-display" data-base="899">₹899/mo</span>
+                        <div onclick="openCheckout('Ryzen VPS', 899)" class="order-btn-box bg-purple-600 px-6 py-2 rounded-lg text-[10px] font-black cursor-pointer">ORDER</div>
+                    </div>
+                </div>
+                <div class="plan-card-dash bg-white/5 p-8 rounded-[2.5rem] border border-white/5">
+                    <span class="popular-tag">ELITE</span>
+                    <h3 class="plan-title text-xl font-black uppercase italic mt-4">Dedicated Node</h3>
+                    <div class="flex justify-between items-center mt-8 pt-6 border-t border-white/5">
+                        <span class="text-2xl font-black price-display" data-base="4999">₹4999/mo</span>
+                        <div onclick="openCheckout('Dedicated Node', 4999)" class="order-btn-box bg-red-600 px-6 py-2 rounded-lg text-[10px] font-black cursor-pointer">ORDER</div>
+                    </div>
+                </div>
+                <div class="plan-card-dash bg-white/5 p-8 rounded-[2.5rem] border border-white/5">
+                    <span class="popular-tag">STORAGE</span>
+                    <h3 class="plan-title text-xl font-black uppercase italic mt-4">Storage Cloud</h3>
+                    <div class="flex justify-between items-center mt-8 pt-6 border-t border-white/5">
+                        <span class="text-2xl font-black price-display" data-base="1299">₹1299/mo</span>
+                        <div onclick="openCheckout('Storage Cloud', 1299)" class="order-btn-box bg-green-600 px-6 py-2 rounded-lg text-[10px] font-black cursor-pointer">ORDER</div>
                     </div>
                 </div>
             </div>
@@ -128,12 +152,10 @@
     <div id="checkoutModal" class="fixed inset-0 bg-black/95 hidden z-[500] flex items-center justify-center p-6 backdrop-blur-xl">
         <div class="bg-[#0d0721] border border-white/10 rounded-[3rem] p-12 w-full max-w-lg shadow-2xl">
             <h2 id="checkPlanName" class="text-4xl font-black italic uppercase mb-8 text-purple-500">Order Summary</h2>
-            
             <div class="space-y-4 mb-8">
                 <input type="text" id="custName" placeholder="FULL NAME" class="auth-field" required>
                 <input type="tel" id="custPhone" placeholder="CONTACT NUMBER" class="auth-field" required>
             </div>
-
             <div class="space-y-4 border-b border-white/5 pb-8 mb-8 text-[12px] font-bold uppercase tracking-wider">
                 <div class="flex justify-between text-gray-400"><span>Base Price</span><span id="checkBase" class="text-white"></span></div>
                 <div class="flex justify-between text-gray-400"><span>Tax (18%)</span><span id="checkTax" class="text-white"></span></div>
