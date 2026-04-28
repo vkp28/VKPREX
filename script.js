@@ -62,17 +62,28 @@ function sendDataToFormspree() {
     btn.disabled = true;
 
     // REPLACE 'your_formspree_id' with your actual Formspree ID
-    fetch('https://formspree.io/f/mvzdylzv', {
+    const formspreeId = 'your_formspree_id'; 
+
+    fetch(`https://formspree.io/f/${formspreeId}`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
         body: JSON.stringify(checkoutData)
     })
     .then(response => {
-        alert("Payment details sent for verification!");
-        location.reload();
+        if (response.ok) {
+            alert("Payment details sent for verification!");
+            location.reload();
+        } else {
+            return response.json().then(data => {
+                throw new Error(data.error || "Submission failed");
+            });
+        }
     })
     .catch(error => {
-        alert("Error sending details. Please try again.");
+        alert("Error sending details: " + error.message);
         btn.innerText = "I HAVE PAID";
         btn.disabled = false;
     });
