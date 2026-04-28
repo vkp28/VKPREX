@@ -62,7 +62,7 @@ function sendDataToFormspree() {
     btn.disabled = true;
 
     // REPLACE 'your_formspree_id' with your actual Formspree ID
-    const formspreeId = 'your_formspree_id'; 
+    const formspreeId = 'https://formspree.io/f/mvzdylzv'; 
 
     fetch(`https://formspree.io/f/${formspreeId}`, {
         method: 'POST',
